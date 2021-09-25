@@ -1,9 +1,6 @@
-﻿using System;
-<<<<<<< HEAD
-=======
+using System;
 using System.Text;
 using System.Linq;
->>>>>>> main
 
 namespace Lab_2
 {
@@ -11,7 +8,6 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             bool Bool = false;
             byte Byte = 129;
             sbyte sByte = -120;
@@ -21,7 +17,7 @@ namespace Lab_2
             float Float = 1.7f;
             int Int = -1;
             uint uInt = 15;
-=======
+            
             //Exercise A
             bool Bool = true;
             byte Byte = 250;            // [0, 255]
@@ -120,7 +116,6 @@ namespace Lab_2
             StringBuilder fraze = new StringBuilder("Медленный успех формирует ");
             fraze.Insert(26, "характер, а быстрый приводит к эгоизму!");
             fraze.Remove
->>>>>>> main
 
         }
     }
