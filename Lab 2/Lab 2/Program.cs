@@ -143,7 +143,7 @@ namespace Lab_2
                 }
 
                 CarList[Id - 1] = Change;
-                Console.Write("Новый список фруктов: ");
+                Console.Write("Новый список автомобилей: ");
                 foreach (string s in CarList)
                 {
                     Console.Write(s + " ");
@@ -177,20 +177,20 @@ namespace Lab_2
             var VarStr = "Abcdefg";
 
             // 4a - 4b 
-            (int, string, char, string, ulong) Cortege = (18, "Александр", 'М', "Мозолевский", 3031666);
+            (int, string, char, string, ulong) Cortege = (2004, "BMW", 'Д', "E39", 5000);
             Console.WriteLine("\n--------Информация--------");
-            Console.WriteLine("Возраст:         " + Cortege.Item1);
-            Console.WriteLine("Имя:             " + Cortege.Item2);
-            Console.WriteLine("Пол:             " + Cortege.Item3);
-            Console.WriteLine("Фамилия:         " + Cortege.Item4);
-            Console.WriteLine("Дом. телефон:    " + Cortege.Item5);
+            Console.WriteLine("Год выпуска:         " + Cortege.Item1);
+            Console.WriteLine("Марка:             " + Cortege.Item2);
+            Console.WriteLine("Тип топлива:             " + Cortege.Item3);
+            Console.WriteLine("Модель:         " + Cortege.Item4);
+            Console.WriteLine("Стоимость:    " + Cortege.Item5);
 
             // Частичный вывод
             Console.WriteLine("\n" + Cortege.Item1 + " " + Cortege.Item3 + " " + Cortege.Item4);
 
             // 4c
             (var y, var z) = (144, "156");
-            Console.WriteLine("\n" + a + " " + b);
+            Console.WriteLine("\n" + y + " " + z);
 
             // 4d
             var First = (a: 10, b: "20");
