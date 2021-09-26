@@ -8,16 +8,6 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
-            bool Bool = false;
-            byte Byte = 129;
-            sbyte sByte = -120;
-            char Char = 'X';
-            decimal Decimal = 1.7M;
-            double Double = 1.72;
-            float Float = 1.7f;
-            int Int = -1;
-            uint uInt = 15;
-            
             //Exercise A
             bool Bool = true;
             byte Byte = 250;            // [0, 255]
@@ -63,7 +53,7 @@ namespace Lab_2
             Nullable<int> NullableInt = null;
             Console.WriteLine($"NullableInt = {NullableInt}");
 
-            //Exersice B
+            //-------------------------------------------------------------------------------------------------Exersice B
             string s1 = "qwerty";
             string s2 = "qwertyu";
             if (String.Compare(s1, s2) == 0)
@@ -115,8 +105,151 @@ namespace Lab_2
             //////////StringBuilder/////////////////////////////////
             StringBuilder fraze = new StringBuilder("Медленный успех формирует ");
             fraze.Insert(26, "характер, а быстрый приводит к эгоизму!");
-            fraze.Remove
+            fraze.Remove(54, 11);
+            fraze.Append(" в никуда!");
+            Console.WriteLine(fraze);
 
+            //-------------------------------------------------------------------------------------------------Exersice C
+            int[,] Matrix = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            for (int i = 0; i < Matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < Matrix.GetLength(1); j++)
+                {
+                    Console.Write(Matrix[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            // 3b
+            try
+            {
+                Console.Write("\nСписок автомобилей: ");
+                foreach (string s in CarList)
+                {
+                    Console.Write(s + " ");
+                }
+
+                Console.Write("\nВведите позицию: ");
+                int Id = Convert.ToInt32(Console.ReadLine());
+                if (Id - 1 > Cars.Length)
+                {
+                    throw new Exception("Неверный индекс!");
+                }
+                Console.Write("Введите значение: ");
+                string Change = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(Change))
+                {
+                    throw new Exception("Неверное значение!");
+                }
+
+                CarList[Id - 1] = Change;
+                Console.Write("Новый список фруктов: ");
+                foreach (string s in CarList)
+                {
+                    Console.Write(s + " ");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            // 3c
+            Random Rnd = new Random();
+            float[][] SArray = new float[3][];
+            SArray[0] = new float[2];
+            SArray[1] = new float[3];
+            SArray[2] = new float[4];
+
+            Console.WriteLine("\n\nСтупенчатый массив: ");
+            for (int i = 0; i < SArray.Length; i++)
+            {
+                for (int j = 0; j < SArray[i].Length; j++)
+                {
+                    SArray[i][j] = Convert.ToSingle(Math.Round(Rnd.NextDouble() * 5, 2));
+                    Console.Write(SArray[i][j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            // 3d
+            var VarInt = new int[] { 1, 2, 3, 4, 5 };
+            var VarStr = "Abcdefg";
+
+            // 4a - 4b 
+            (int, string, char, string, ulong) Cortege = (18, "Александр", 'М', "Мозолевский", 3031666);
+            Console.WriteLine("\n--------Информация--------");
+            Console.WriteLine("Возраст:         " + Cortege.Item1);
+            Console.WriteLine("Имя:             " + Cortege.Item2);
+            Console.WriteLine("Пол:             " + Cortege.Item3);
+            Console.WriteLine("Фамилия:         " + Cortege.Item4);
+            Console.WriteLine("Дом. телефон:    " + Cortege.Item5);
+
+            // Частичный вывод
+            Console.WriteLine("\n" + Cortege.Item1 + " " + Cortege.Item3 + " " + Cortege.Item4);
+
+            // 4c
+            (var y, var z) = (144, "156");
+            Console.WriteLine("\n" + a + " " + b);
+
+            // 4d
+            var First = (a: 10, b: "20");
+            var Second = (a: 10, b: "20");
+            if (First == Second)
+            {
+                Console.WriteLine("\nКортежи равны!");
+            }
+            else
+            {
+                Console.WriteLine("\nКортежи не равны!");
+            }
+
+            // 5
+            Tuple<int, int, int, char> Collector(int[] num, string str)
+            {
+                return Tuple.Create(num.Max(), num.Min(), num.Sum(), str[0]);
+            }
+            int[] ArrToTuple = { 5, 12, 56 };
+            string StrToTuple = "ABC";
+            Tuple<int, int, int, char> T = Collector(ArrToTuple, StrToTuple);
+            Console.WriteLine("\nКортёж: " + T);
+
+            // 6
+            void FirstFoo()
+            {
+                try
+                {
+                    checked
+                    {
+                        int x = int.MaxValue;
+                        x++;
+                    }
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Произошло переполнение!");
+                }
+            }
+
+            void SecondFoo()
+            {
+                try
+                {
+                    unchecked // Не вызывает OverflowException
+                    {
+                        int x = int.MaxValue;
+                        x++;
+                    }
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Произошло переполнение!");
+                }
+            }
+
+            FirstFoo();
+            SecondFoo();
+            Console.ReadKey();
         }
     }
 }
