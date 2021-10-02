@@ -10,6 +10,6 @@ namespace Laba_3
         private string surname;
         private string name;
         private string patronymic;
-
+         dgjgk
     }
 }
