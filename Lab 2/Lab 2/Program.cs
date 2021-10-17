@@ -212,7 +212,7 @@ namespace Lab_2
             int[] ArrToTuple = { 5, 12, 56 };
             string StrToTuple = "ABC";
             Tuple<int, int, int, char> T = Collector(ArrToTuple, StrToTuple);
-            Console.WriteLine("\nКортёж: " + T);
+            Console.WriteLine("\nКортеж: " + T);
 
             // 6
             void FirstFoo()
