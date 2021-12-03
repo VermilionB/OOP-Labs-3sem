@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Laba_5.Exeptions;
+
 
 namespace Laba_5
 {
@@ -26,36 +28,41 @@ namespace Laba_5
         {
             Console.WriteLine("Take age of units you want to see:\n");
 
+            bool founded = false;
             int search_age = Convert.ToInt32(Console.ReadLine()); 
             foreach(T item in list)
             {
                 if(search_age == item.CountAge())
                 {
+                    founded = true;
                     Console.WriteLine("Unit with given age was found.There is info about this unit:\n");
                     Console.WriteLine(item.ToString());
                 }
-                else
-                {
-                    throw new Exception("Unit with given age was not found!");
-                }
+            }
+            if(founded == false)
+            {
+                throw new SearchEx("Unit with given age was not found!");
             }
         }
 
         public void ShowTransformersWithGivenPower()
         {
             Console.WriteLine("Take power of transformers you want to see:\n");
+
+            bool founded = false;
             int search_power = Convert.ToInt32(Console.ReadLine());
             foreach (T item in list)
             {
                 if (search_power <= (item as Transformer)?.Power)
                 {
+                    founded = true;
                     Console.WriteLine("Unit with given power was found.There is info about this unit:\n");
                     Console.WriteLine(item.ToString());
                 }
-                else
-                {
-                    throw new Exception("Transformers with power, bigger than given, was not found!");
-                }
+            }
+            if (founded == false)
+            {
+                throw new PowerEx("Transformers with power, bigger than given, was not found!");
             }
         }
 

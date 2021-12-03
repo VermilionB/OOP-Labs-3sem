@@ -7,9 +7,8 @@ namespace Laba_5
         static void Main(string[] args)
         {
             
-            Printer printer = new Printer();
-
             //Automobile c200 = new Automobile("c-class", "diesel", "red");
+            //c200.Print();
             //c200.TopUp(99999999);
             //Automobile g63 = new Automobile("g-class", "benzine", "black");
 
@@ -20,12 +19,14 @@ namespace Laba_5
             transformers[1] = new Transformer("Optimus", "ally", 5000);
             transformers[2] = new Transformer("Megatron", "enemy", 4000);
 
-            //Transformer bumblebee = new Transformer("BumblebeeZEE", "ally");
-            //bumblebee.Start();
-            //bumblebee.Fire(Transformer.TypesOfGun.minigun);
-            //bumblebee.Stop();
-            //Console.WriteLine();
-            
+
+            Transformer bumblebee = new Transformer("BumblebeeZEE", "ally", 7000);
+            bumblebee.Start();
+            bumblebee.Fire(Transformer.TypesOfGun.minigun);
+            bumblebee.Stop();
+            bumblebee.Print();
+            Console.WriteLine();
+
 
             Console.WriteLine("Dates for Humen\n-------------------\n");
 

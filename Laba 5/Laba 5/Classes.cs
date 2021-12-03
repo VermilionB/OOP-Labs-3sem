@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Laba_5
 {
 
-    abstract class Vehicle : IDescription
+    abstract class Vehicle
     {
         public bool isActive;
         public string Name { get; set; }
@@ -31,10 +31,7 @@ namespace Laba_5
             return 2021 - year;
         }
 
-        void IDescription.Display()
-        {
-            Console.WriteLine("This is a vehicle!");
-        }
+        
         public Vehicle(string name, string fuel, string color)
         {
             Name = name;
@@ -47,15 +44,6 @@ namespace Laba_5
     class Automobile : Vehicle
     {
         private float price = 5000f;
-        public void TopUp(float value)
-        {
-            if (value < 0) throw new TopUpEx("Can't raise negative value", value);
-            if (value > 999999) throw new TopUpEx("Too big raise", value);
-
-            Debug.Assert(value <= 999999, "Too much...");
-            price += value;
-        }
-
         public override string ToString() => $"New car: {Name}\nFuelType: {FuelType}\nColor: {Color}\nHash: {Hash}\nAge: {this.CountAge()}";
 
         public Automobile(string name, string fuel, string color) : base(name, fuel, color)
@@ -158,7 +146,7 @@ namespace Laba_5
             return 2021 - Year;
         }
 
-        void IDescription.Display()
+        void IDescription.Print()
         {
             Console.WriteLine("|Interface| This is a sentient being");
         }
@@ -175,7 +163,7 @@ namespace Laba_5
 
     }
 
-    sealed class Transformer : SentientBeing
+    sealed class Transformer : SentientBeing, IDescription
     {
         public int Power { get; set; }
         public string Type { get; set; }
@@ -219,9 +207,10 @@ namespace Laba_5
             return $"Name: {Name}\nAge: {this.CountAge()}\nType: {Type}\nPower: {Power}\n";
         }
 
+        public void Print() => Console.WriteLine(ToString());
     }
 
-    sealed class Human : SentientBeing
+    sealed class Human : SentientBeing, IDescription
     {
         public string SkinColor { get; set; }
         public Human(string name, string skin) : base(name)
@@ -236,12 +225,10 @@ namespace Laba_5
             return $"Name: {Name}\nAge: {this.CountAge()}\nSkin: {SkinColor}\n";
         }
 
-    }
-    class Printer
-    {
-        public void IAmPrinting(IDescription obj)
+        public void Print()
         {
-            Console.WriteLine($"Type: {obj.ToString()}");
+            this.ToString();
         }
     }
+    
 }
