@@ -1,0 +1,17 @@
+|Directories|
+bin
+GIAFiles
+GIAInspect
+obj
+zip
+
+|Files|
+GIADirInfo.cs
+GIADiskInfo.cs
+GIAFileInfo.cs
+GIAFileManager.cs
+GIALog.cs
+GIAlogfile.txt
+Laba 13.csproj
+Program.cs
+zip.zip

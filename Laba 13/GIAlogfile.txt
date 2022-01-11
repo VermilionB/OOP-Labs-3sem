@@ -1,0 +1,35 @@
+23.12.2021 9:55:31
+
+GIADiskInfo: C:\
+Определено свободное место на диске.
+
+GIADiskInfo: C:\
+NTFS
+
+GIADiskInfo: C:\
+Выведена информация о диске.
+
+GIADiskInfo: D:\
+Выведена информация о диске.
+
+GIAFileInfo: GIALogFile.txt
+Определён полный путь к файлу.
+
+GIAFileInfo: GIALogFile.txt
+Выведена базовая информация о файле.
+
+GIAFileInfo: GIALogFile.txt
+Определены тайминги файла.
+
+GIADirInfo: D:\УЧЕБА 3 СЕМ\OOP\OOP-Labs-3sem\Laba 13\Laba 13
+Определено количество файлов в директория.
+
+GIADirInfo: D:\УЧЕБА 3 СЕМ\OOP\OOP-Labs-3sem\Laba 13\Laba 13
+Определено время создания дриектория.
+
+GIADirInfo: D:\УЧЕБА 3 СЕМ\OOP\OOP-Labs-3sem\Laba 13\Laba 13
+Определено количество поддиректориев директория.
+
+GIADirInfo: D:\УЧЕБА 3 СЕМ\OOP\OOP-Labs-3sem\Laba 13\Laba 13
+Определен родительский путь директория.
+

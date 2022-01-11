@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Laba_8.Exeptions;
 
 namespace Laba_8
 {
@@ -17,8 +18,12 @@ namespace Laba_8
 
         public void Add(T item)
         {
-            list.Add(item);
-            size++;
+            if (GetSize() < 4)
+            {
+                list.Add(item);
+                size++;
+            }
+            else throw new SizeEx("Collection is full!");
         }
         public void Remove(ref T item) => list?.Remove(item);
         public void Show()
